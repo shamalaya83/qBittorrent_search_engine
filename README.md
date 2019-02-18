@@ -1,2 +1,5 @@
 # qBittorrent_search_engine
-qbittorrent search engine
+Corsaro.red qbittorrent search engine plugin
+
+require cfscrape https://github.com/Anorov/cloudflare-scrape
+
