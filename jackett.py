@@ -1,7 +1,8 @@
-#VERSION: 2.00
+#VERSION: 2.01
 # AUTHORS: ukharley
 #          hannsen (github.com/hannsen)
 # CONTRIBUTORS: Diego de las Heras (ngosang@hotmail.es)
+#				Shamalaya (github.com/dandag)
 
 import json
 import os
@@ -176,4 +177,4 @@ class jackett(object):
 
 if __name__ == "__main__":
     jackett_se = jackett()
-    jackett_se.search("cosmology in crisis", 'all')
+    jackett_se.search("archlinux", 'all')
