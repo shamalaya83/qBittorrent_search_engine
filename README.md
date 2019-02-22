@@ -3,7 +3,7 @@
 ## corsarored : corsarored.py
 Corsaro.red qbittorrent search engine plugin
 
-require cfscrape (https://github.com/Anorov/cloudflare-scrape) and nodejs
+requires cfscrape (https://github.com/Anorov/cloudflare-scrape) and nodejs
 
 
 
