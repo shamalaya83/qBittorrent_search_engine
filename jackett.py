@@ -2,7 +2,7 @@
 # AUTHORS: ukharley
 #          hannsen (github.com/hannsen)
 # CONTRIBUTORS: Diego de las Heras (ngosang@hotmail.es)
-#				Shamalaya (github.com/dandag)
+#               Shamalaya (github.com/dandag)
 
 import json
 import os
