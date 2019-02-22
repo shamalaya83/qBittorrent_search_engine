@@ -126,11 +126,11 @@ class jackett(object):
             if result['MagnetUri']:
                 res['link'] = result['MagnetUri']
             else:
-                res['link'] = self.resolve_http_redirect( result['Link'] )
+                res['link'] = self.resolve_http_redirect( result['Link'], what )
                 
             prettyPrinter(res)
 
-    def resolve_http_redirect(self, url):
+    def resolve_http_redirect(self, url, what):
         o = urlparse(url,allow_fragments=True)
         conn = httplib.HTTPConnection(o.netloc)
         path = o.path
@@ -141,10 +141,13 @@ class jackett(object):
         res = conn.getresponse()
         headers = dict(res.getheaders())
 
+        # jackett returns 302 to magnet link or to .torrent file
         if 'Location' in headers:
             return headers['Location']
-        else:
+        elif 'Content-Type' in headers and 'Content-Disposition' in headers:
             return url
+        else:
+            self.handle_error("malformed torrent URL", what)
 
     def get_response(self, query):
         response = None

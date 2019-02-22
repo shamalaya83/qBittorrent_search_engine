@@ -1,5 +1,5 @@
 # VERSION: 1.0
-# AUTHORS: shama83
+# AUTHORS: shamalaya
 
 from helpers import download_file, retrieve_url
 from novaprinter import prettyPrinter
@@ -51,4 +51,4 @@ class corsarored(object):
 # script test
 if __name__ == "__main__":
     cr = corsarored()
-    cr.search('russian doll','all')
+    cr.search('archlinux','all')
