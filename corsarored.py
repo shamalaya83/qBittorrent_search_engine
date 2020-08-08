@@ -1,26 +1,25 @@
-# VERSION: 1.0
+# VERSION: 1.1
 # AUTHORS: shamalaya
 
 from helpers import download_file, retrieve_url
 from novaprinter import prettyPrinter
 import json
 from urllib.parse import unquote
-import cfscrape #bypass cf cookie (need https://pypi.org/project/cfscrape and nodejs installed)
+import requests
 
 class corsarored(object):
     url = 'https://corsaro.red/'
     name = 'Corsaro.red'
     supported_categories = {'all': '0', 'movies': '2', 'tv': '1', 'music': '3', 'games': '6', 'anime': '7', 'software': '5'}
     searchurl = url + 'api/search'
-    limit = 20 # results per page
+    limit = 20 # loop max 20 pages
 
     def search(self, what, cat):
         try:
-            scraper = cfscrape.create_scraper()
+            #scraper = cfscrape.create_scraper()
             for page in range(1,self.limit):
                 data = {"term":unquote(what),"category": self.supported_categories[cat],"page":page}
-                jsonresult = scraper.post(self.searchurl,data).content.decode('utf-8')
-                json_object = json.loads(jsonresult)
+                json_object = requests.post(url=self.searchurl, data=data).json()
                 nitems = len(json_object['results'])
                 if nitems == 0:
                     break
