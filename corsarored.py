@@ -16,7 +16,6 @@ class corsarored(object):
 
     def search(self, what, cat):
         try:
-            #scraper = cfscrape.create_scraper()
             for page in range(1,self.limit):
                 data = {"term":unquote(what),"category": self.supported_categories[cat],"page":page}
                 json_object = requests.post(url=self.searchurl, data=data).json()
