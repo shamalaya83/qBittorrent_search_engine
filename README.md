@@ -7,3 +7,6 @@ Requires: requests urllib3
 
 ### Archlinux
 pacman -S python-requests python-urllib3
+
+### Windows
+pip install requests urllib3
