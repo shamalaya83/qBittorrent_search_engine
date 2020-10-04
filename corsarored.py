@@ -15,7 +15,7 @@ class corsarored(object):
     searchurl = url + 'api/search'
     limit = 20 # loop max 20 pages
 
-    def search(self, what, cat):
+    def search(self, what, cat='all'):
         try:
             for page in range(1,self.limit):
                 data = {"term":unquote(what),"category": self.supported_categories[cat],"page":page}
