@@ -1,8 +1,12 @@
 #VERSION: 1.1
 #AUTHORS: shamalaya
 
-from helpers import download_file, retrieve_url
+#from helpers import download_file, retrieve_url
+#from novaprinter import prettyPrinter
+from helpers import retrieve_url
+from helpers import download_file
 from novaprinter import prettyPrinter
+
 import json
 from urllib.parse import unquote
 import requests
