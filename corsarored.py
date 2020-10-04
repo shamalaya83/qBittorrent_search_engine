@@ -1,5 +1,5 @@
-# VERSION: 1.1
-# AUTHORS: shamalaya
+#VERSION: 1.1
+#AUTHORS: shamalaya
 
 from helpers import download_file, retrieve_url
 from novaprinter import prettyPrinter
